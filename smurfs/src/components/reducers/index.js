@@ -4,7 +4,7 @@ const initialState = {
     isLoading: false,
     error: '',
     smurfData: {
-        name: '',
+        name: 'Miley',
         age: '',
         height: ''
     }
