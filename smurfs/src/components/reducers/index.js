@@ -1,41 +1,48 @@
-import {START, SUCCESS, FAILED} from '../actions';
+import { START, SUCCESS, FAILED, NEW_SMURF } from "../actions";
 
 const initialState = {
-    isLoading: false,
-    error: '',
-    smurfData: {
-        name: 'Miley',
-        age: '',
-        height: ''
-    }
-}
+  smurfs: [],
+   error: null,
+  isLoading: false
+ 
+  
+};
 
-const Reducer = (state = initialState, action) => {
-    switch(action.type){
-        case START:
-            return {
-                ...state,
-                isLoading: true
-            }
-        case SUCCESS:
-            return {
-                ...state, 
-                smurfData: {
-                    ...state.smurfData, 
-                    name: action.payload,
-                    age: action.payload,
-                    height: action.payload
-                }
-            }
-        case FAILED:
-            return {
-                ...state,
-                error: action.payload,
-                isLoading: false
-            }
-        default:
-            return state;
-    }
-}
+export const Reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case START:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case SUCCESS:
+      return {
+        ...state,
+        smurfs: action.payload,
+        isLoading: false
+      };
+    case FAILED:
+      return {
+        ...state,
+        error: action.payload,
+        isLoading: false
+      };
+    // case NEW_SMURF:
+    //         const newSmurf = {
+    //             name: action.payload.newSmurfName,
+    //             height: action.payload.newSmurfHeight,  
+    //             age: action.payload.newSmurfAge,
+    //             id: Date.now()
+    //         }
+    //         return{
+    //             ...state,
+    //             smurf: [
+    //                 ...state.smurfs, newSmurf
+    //             ]
+    //         }
+    default:
+      return state;
+  }
+};
 
 export default Reducer;
