@@ -37,21 +37,21 @@ const Form = props => {
   return (
     <div className="center">
       <form className="card" onSubmit={handleSubmit}>
-        <input
+        <input className='input'
           type="text"
           name="name"
           placeholder="Name"
           onChange={changeNameHandler}
         />
 
-        <input
+        <input className='input'
           type="number"
           name="age"
           placeholder="Age"
           onChange={changeAgeHandler}
         />
 
-        <input
+        <input className='input'
           type="text"
           name="height"
           placeholder="Height"

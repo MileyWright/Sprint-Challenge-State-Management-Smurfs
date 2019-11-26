@@ -13,8 +13,10 @@ const App = props => {
   return (
     <div className='App'>
       <h1> Smurfs! 2.0 with Redux</h1>
-      <SmurfList />
-      <Form />
+        <div className='container'>
+          <Form />
+          <SmurfList />
+        </div>
     </div>
   )
 }
